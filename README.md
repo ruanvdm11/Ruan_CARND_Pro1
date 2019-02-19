@@ -8,7 +8,7 @@
 
 ### Reflection
 
-###1. Pipeline Discussion
+### 1. Pipeline Discussion
 
 The pipeline that I created in order to successfully complete the necessary task is sequentially explained in the following tables. However a brief explanation will also be given as to how the lines of the Hough transform were utilised in the creation of the road lines.
 
@@ -33,7 +33,7 @@ The pipeline that I created in order to successfully complete the necessary task
 | ![alt text](https://github.com/ruanvdm11/Ruan_CARND_Pro1/blob/master/Pipeline_Image7_Resultant_Extrapolated_Lines.jpg?raw=true)
 
 ---
-####2. The utilisation of the Hough transform data occured as follows:
+#### 2. The utilisation of the Hough transform data occured as follows:
 * Firstly the minumum and maximum gradients were determined from the obtained points. The reason for this is because due to how the camera sees the road it will have the effect that the left road line will have a positive incline and the right line will have a negative incline. Obtaining the largest and smallest (largest in the negative direction) inclines will give the points to be used.
 * Now that we have inclines we can calculate the linear line running through these points and extrapolate where necessary.
 * The boundaries for the extrapolation were decided to be:
@@ -42,7 +42,7 @@ The pipeline that I created in order to successfully complete the necessary task
 * Thus, only x values for the plot had to be calculated and this was done by using the incline, offset, and y values that were obtained.
 * The offset and incline values was then stored in a matrix so that previous values can be called for averaging purposes.
 
-####The following shows the test images that were obtained.
+#### The following shows the test images that were obtained.
 | 1. Solid White Curve   | 2. Solid White Right   |
 | :--- | :--- |
 | ![alt text](https://github.com/ruanvdm11/Ruan_CARND_Pro1/blob/master/SolidWhiteCurve.jpg?raw=true)   | ![alt text](https://github.com/ruanvdm11/Ruan_CARND_Pro1/blob/master/SolidWhiteRight.jpg?raw=true)   | 
@@ -58,7 +58,7 @@ The pipeline that I created in order to successfully complete the necessary task
 | ![alt text](https://github.com/ruanvdm11/Ruan_CARND_Pro1/blob/master/solidYellowLeft.jpg?raw=true)   | ![alt text](https://github.com/ruanvdm11/Ruan_CARND_Pro1/blob/master/whiteCarLaneSwitch.jpg?raw=true)   |
 
 
-###2. Potential shortcomings with the current pipeline
+### 2. Potential shortcomings with the current pipeline
 
 
 One possible shortcoming of my pipeline is that at this stage the lines being created seem 'shaky'. If the averaging is increased it is seen that the pipeline does not predict the road line well. Therefore, in its current configuration is predicts the line well but with some flutter.
@@ -66,7 +66,7 @@ One possible shortcoming of my pipeline is that at this stage the lines being cr
 In the 'challenge' clip the excessive colour gradients definitely puts the pipeline through its paces. Therefore, another shortcoming is that when shadows (many clour gradients) are detected the pipeline might deviate slightly from its prediction.
 
 
-###3. Possible improvements to the pipeline
+### 3. Possible improvements to the pipeline
 
 A definite improvement is to concatenate the code. At this stage it seem bulky even though it would be capable of calculating a 33 FPS clip real time.  I inserted a timer to see how long the script runs per clip to estimate this value. The reason this is important criteria is because the faster an image can be processed, the faster a decision can be made which is crucial in this environment.
 
